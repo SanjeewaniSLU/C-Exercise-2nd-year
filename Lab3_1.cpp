@@ -1,9 +1,33 @@
 #include <iostream>
-#include <vector>
+#include <string>
+#include <map>
 
-int main(){
+using namespace std;
 
-    std::vector<int> nrs;
-    int count;
+int main()
+{
+    map < string, int> mp;
+    string input;
+    int integer = 0;
 
-    std::cout << " Enter name or “stop” or “print”: ";
+    while(true){
+        cout << "Enter name or \"stop\" or \"print\" : " ;
+        cin >> input;
+
+        if(input == "stop"){
+            break;
+        }
+        else if(input == "print"){
+            for (auto it = mp.begin();it != mp.end();++it){
+                cout << it->first << ":" << it->second <<endl;
+            }
+        }
+        else{
+            cout << "Enter an integer :";
+            cin >> integer;
+            mp[input] = integer;
+        }
+    }
+    return 0;
+}
+
