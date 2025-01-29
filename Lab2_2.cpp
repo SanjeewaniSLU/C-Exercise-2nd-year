@@ -39,10 +39,11 @@ int main(){
     resultFile << "Content of the string vector:" << std::endl;
     for (const auto& dir : dirNames) {
         resultFile << dir << std::endl;
+        std::cout << dir << std::endl;
     }
 
-    std::cout << "Relative path to the file: " << relativePath << std::endl;
-    resultFile << "Relative path to the file: " << relativePath << std::endl;
+    std::cout << "Relative path to the file: " << lastFilePath << std::endl;
+    resultFile << "Relative path to the file: " << lastFilePath << std::endl;
 
     return 0;
 }
