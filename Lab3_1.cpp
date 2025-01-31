@@ -4,18 +4,18 @@
 
 using namespace std;
 
-int main()
-{
+int main(){
     map < string, int> mp;
     string input;
     int integer = 0;
+    bool end = false;
 
-    while(true){
-        cout << "Enter name or \"stop\" or \"print\" : " ;
+    while(!end){
+        cout << " Enter name or \"stop\" or \"print\" : " ;
         cin >> input;
 
         if(input == "stop"){
-            break;
+            end = true;
         }
         else if(input == "print"){
             for (auto it = mp.begin();it != mp.end();++it){
