@@ -36,18 +36,20 @@ double RunningAverage::get_average(){
 int main() {
     RunningAverage avg(5);
     int input;
+    bool end = false;
 
-    while (true) {
+    while (!end){
         std::cout << "Enter a number (0 to stop): ";
         std::cin >> input;
 
         if (input == 0) {
             std::cout << "Current running average: " << avg.get_average() << std::endl;
-            break;
-        }
+            end = true;
+        }else{
 
-        avg.add_value(input);
-        std::cout << "Current running average: " << avg.get_average() << std::endl;
+            avg.add_value(input);
+            std::cout << "Current running average: " << avg.get_average() << std::endl;
+        }
     }
 
     return 0;
