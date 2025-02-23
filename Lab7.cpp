@@ -8,10 +8,7 @@ public:
     virtual void identity() const {
         std::cout << "My name is: " << name << std::endl;
     }
-    virtual void interrogate() {
-        std::cout << getName() << " is being interrogated." << std::endl;
-    }
-    std::string getName() const { return name; }
+    virtual void interrogate(){}
 private:
     std::string name;
 };
@@ -29,17 +26,14 @@ public:
         if (resistance > 0) {
             std::cout << "My name is: " << alias << std::endl;
         } else {
-            std::cout << "My name is: " << getName() << std::endl;
+            Person::identity();
             std::cout << "My alias is: " << alias << std::endl;
         }
     }
 
     void interrogate() override {
-        if (resistance > 0) {
-            resistance--;
+        resistance--;
         }
-    }
-
 private:
     std::string alias;
     int resistance;
