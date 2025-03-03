@@ -2,7 +2,6 @@
 
 using namespace std;
 
-// Abstract class Counter
 class Counter {
 public:
     virtual void inc() = 0;
@@ -11,7 +10,7 @@ public:
     virtual ~Counter() {};
 };
 
-// Derived class LimitedCounter
+
 class LimitedCounter : public Counter {
 public:
     LimitedCounter(int initial, int upper) : value(initial), upper_limit(upper) {}
@@ -37,7 +36,7 @@ private:
     int upper_limit;
 };
 
-// Derived class OverflowCounter
+
 class OverflowCounter : public Counter {
 public:
     OverflowCounter(int initial, int upper) : value(initial), upper_limit(upper) {}
@@ -67,7 +66,7 @@ private:
     int upper_limit;
 };
 
-// Function to use the counter
+
 void UseCounter(Counter& ctr, int num) {
     if (num > 0) {
         for (int i = 0; i < num; ++i) {
@@ -80,7 +79,7 @@ void UseCounter(Counter& ctr, int num) {
     }
 }
 
-// Main function for testing
+
 int main(int argc, char** argv) {
     LimitedCounter lc(0, 5);
     OverflowCounter oc(5, 9);
