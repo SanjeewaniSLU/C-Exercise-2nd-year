@@ -8,7 +8,7 @@ public:
 };
 class Subject {
 public:
-    virtual void Attach(Observer *o) = 0; // Set
+    virtual void Attach(Observer *o) = 0;
     virtual void Notify() = 0;
 };
 
@@ -21,9 +21,7 @@ public:
         std::cout << "My name is: " << name << std::endl;
     }
     virtual void interrogate(){}
-    std::string getName() const {
-        return name;
-    }
+
 private:
     std::string name;
 };
@@ -47,9 +45,11 @@ public:
         }
     }
     void interrogate() override {
-        resistance--;
-        if (resistance <= 0) {
-            Notify();
+        if(resistance > 0){
+            resistance--;
+            if (resistance == 0) {
+                Notify();
+            }
         }
     }
 
@@ -73,7 +73,7 @@ public:
     Judge(const char* name) : Person(name) {}
 
     void Update() override {
-        std::cout << "My name is: " << getName() << std::endl;
+        Person::identity();
         std::cout << "I'm sending a spy to prison!" << std::endl;
     }
 };
