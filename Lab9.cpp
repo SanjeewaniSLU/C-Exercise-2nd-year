@@ -73,7 +73,7 @@ public:
     Judge(const char* name) : Person(name) {}
 
     void Update() override {
-        Person::identity();
+        identity();
         std::cout << "I'm sending a spy to prison!" << std::endl;
     }
 };
